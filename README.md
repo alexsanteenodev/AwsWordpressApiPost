@@ -56,3 +56,6 @@ command.
  * `cdk docs`        open CDK documentation
 
 Enjoy!
+
+# deploy with args
+./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2/posts" "username" "password" --profile=YOUR_PROFILE
