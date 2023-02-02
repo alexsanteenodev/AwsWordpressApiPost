@@ -29,6 +29,8 @@ def create_wp_post(title: string):
     content = generate_post_content_by_title(title)
     if (not content):
         return 500
+    else:
+        print("Post content generated successfully")
     # Set the data for the new post
     data = {
         "title": title,
@@ -37,8 +39,9 @@ def create_wp_post(title: string):
         "status": "publish"
     }
 
+    print("Creating in WP...")
     # Make the request to create the post
     response = requests.post(endpoint_url, auth=auth, json=data)
 
     # Return the response
-    return response.status_code
+    return response

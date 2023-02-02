@@ -10,11 +10,13 @@ def generate_publish_post():
 
     print("Generating post content for: " + title)
     # Call the function to create the post
-    response_status = create_wp_post(
+    response = create_wp_post(
         title)
 
     # Print the response status code
-    if (response_status == 201):
-        print("Post created successfully, the response is given below")
+    if (response.status_code == 201):
+        print("Post created successfully. Status code:", response.status_code)
     else:
-        print("Failed to create post, the response is given below")
+        print("Failed to create post! Status code: ", response.content)
+        raise Exception(
+            "Post create failed!!!")

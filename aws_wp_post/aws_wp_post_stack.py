@@ -53,7 +53,7 @@ class AwsWpPostStack(Stack):
         # event rule for invoking lambda function by schedule
         event_rule = aws_events.Rule(self, "scheduleRule",
                                      schedule=aws_events.Schedule.cron(
-                                         minute='0 22 * * *'),
+                                         minute='0', hour='22'),
                                      )
 
         # add target to event rule
