@@ -23,7 +23,6 @@ def lambda_handler(event, _context):
             calendar.day_name[dt.weekday()], dt.time().isoformat())
     logger.info("Full event: %s", event)
 
-    print("os.environ", os.environ)
     # Generate a random post title
     if (os.getenv("PUBLISHER_ENABLED") is not None and os.environ["PUBLISHER_ENABLED"] == "True"):
         print("Publisher is enabled")

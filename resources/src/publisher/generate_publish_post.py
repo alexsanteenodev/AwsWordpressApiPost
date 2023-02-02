@@ -1,4 +1,3 @@
-
 import src.publisher.wordpress.create_wp_post as create_wp_post
 import src.publisher.wordpress.generate_post_title as generate_post_title
 
@@ -9,6 +8,7 @@ def generate_publish_post():
     if (not title):
         return
 
+    print("Generating post content for: " + title)
     # Call the function to create the post
     response_status = create_wp_post(
         title)
