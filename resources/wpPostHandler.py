@@ -1,33 +1,34 @@
-import requests
 import os
+import src.publisher.generate_publish_post as generate_publish_post
+import calendar
+import logging
+import dateutil.parser
 
-
-def create_wp_post(title, content):
-    # Set the endpoint URL for the WordPress site
-    endpoint_url = os.environ['ENDPOINT_URL']
-
-    # Set the basic auth credentials
-    auth = (os.environ['AUTH_USERNAME'], os.environ['AUTH_PASSWORD'])
-
-    # Set the data for the new post
-    data = {
-        "title": title,
-        "content": content,
-        "status": "draft"
-    }
-
-    # Make the request to create the post
-    response = requests.post(endpoint_url, auth=auth, json=data)
-
-    # Return the response
-    return response
+logger = logging.getLogger()
+logger.setLevel(logging.INFO)
 
 
 def lambda_handler(event, context):
-    # Call the function to create the post
-    response = create_wp_post(
-        "My New Post", "This is the content for my new post from lambda.")
+    """
+    Logs the call with a friendly message and the full event data.
+    :param event: The event dict that contains the parameters sent when the function
+                  is invoked.
+    :param context: The context in which the function is called.
+    :return: The result of the specified action.
+    """
+    if 'time' in event:
+        dt = dateutil.parser.parse(event['time'])
+        logger.info(
+            "Lambda invoked on %s at %s.",
+            calendar.day_name[dt.weekday()], dt.time().isoformat())
+    logger.info("Full event: %s", event)
 
-    # Print the response status code
-    print(response.status_code)
-    print(response.content)
+    print("os.environ", os.environ)
+    # Generate a random post title
+    if (os.getenv("PUBLISHER_ENABLED") is not None and os.environ["PUBLISHER_ENABLED"] == "True"):
+        print("Publisher is enabled")
+        generate_publish_post()
+    else:
+        print("Publisher is disabled")
+
+    print("Handler finished")

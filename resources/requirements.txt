@@ -1,1 +1,7 @@
 requests
+google-ads
+google-api-python-client
+google-auth-oauthlib
+slugify
+python-slugify
+openai
