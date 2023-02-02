@@ -1,5 +1,5 @@
 import os
-import src.publisher.generate_publish_post as generate_publish_post
+from src.publisher.generate_publish_post import generate_publish_post
 import calendar
 import logging
 import dateutil.parser
@@ -21,8 +21,10 @@ def lambda_handler(event, _context):
         logger.info(
             "Lambda invoked on %s at %s.",
             calendar.day_name[dt.weekday()], dt.time().isoformat())
+
     logger.info("Full event: %s", event)
 
+    print("Handler started", os.environ["PUBLISHER_ENABLED"])
     # Generate a random post title
     if (os.getenv("PUBLISHER_ENABLED") is not None and os.environ["PUBLISHER_ENABLED"] == "True"):
         print("Publisher is enabled")
@@ -31,3 +33,6 @@ def lambda_handler(event, _context):
         print("Publisher is disabled")
 
     print("Handler finished")
+
+
+# lambda_handler({"time": "2021-08-01T00:00:00Z"}, None)

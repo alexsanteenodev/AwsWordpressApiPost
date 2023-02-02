@@ -1,11 +1,16 @@
 import json
 import random
 import string
+from os import path
+
+basepath = path.dirname(__file__)
 
 
-def main():
+def generate_post_title():
     # Opening JSON file
-    f = open('../../config/placeholders.json')
+    filepath = path.abspath(
+        path.join(basepath, "..", "..", "config/placeholders.json"))
+    f = open(filepath)
 
     # returns JSON object as
     # a dictionary

@@ -1,8 +1,8 @@
-import src.publisher.wordpress.create_wp_post as create_wp_post
-import src.publisher.wordpress.generate_post_title as generate_post_title
+from src.publisher.wordpress.create_wp_post import create_wp_post
+from src.publisher.wordpress.generate_post_title import generate_post_title
 
 
-def main():
+def generate_publish_post():
     title = generate_post_title()
     # Generate a post content using OpenAI
     if (not title):

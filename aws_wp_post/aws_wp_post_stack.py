@@ -47,13 +47,13 @@ class AwsWpPostStack(Stack):
                                             "AUTH_USERNAME": os.environ['AUTH_USERNAME'],
                                             "AUTH_PASSWORD": os.environ['AUTH_PASSWORD'],
                                             "OPENAI_API_KEY": os.environ['OPENAI_API_KEY'],
-                                            "PUBLISHER_ENABLED": 'False',
+                                            "PUBLISHER_ENABLED": 'True',
                                         }
                                         )
         # event rule for invoking lambda function by schedule
         event_rule = aws_events.Rule(self, "scheduleRule",
                                      schedule=aws_events.Schedule.cron(
-                                         minute='*/3'),
+                                         minute='0 22 * * *'),
                                      )
 
         # add target to event rule
