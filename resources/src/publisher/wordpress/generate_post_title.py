@@ -3,7 +3,7 @@ import random
 import string
 
 
-def generate_post_title():
+def main():
     # Opening JSON file
     f = open('../../config/placeholders.json')
 

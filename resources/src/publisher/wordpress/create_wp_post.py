@@ -8,7 +8,7 @@ import src.publisher.wordpress.get_wp_post_by_slug as get_wp_post_by_slug
 import src.publisher.openai.generate_post_content_by_title as generate_post_content_by_title
 
 
-def create_wp_post(title: string):
+def main(title: string):
     # Set the endpoint URL for the WordPress site
     endpoint_url = os.environ['ENDPOINT_URL']
     # Set the basic auth credentials

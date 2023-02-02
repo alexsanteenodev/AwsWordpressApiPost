@@ -3,7 +3,7 @@ import os
 import string
 
 
-def get_wp_post_by_slug(slug: string):
+def main(slug: string):
     # Set the endpoint URL for the WordPress site
     endpoint_url = os.environ['ENDPOINT_URL'] + \
         '?slug='+slug

@@ -2,7 +2,7 @@ import src.publisher.wordpress.create_wp_post as create_wp_post
 import src.publisher.wordpress.generate_post_title as generate_post_title
 
 
-def generate_publish_post():
+def main():
     title = generate_post_title()
     # Generate a post content using OpenAI
     if (not title):

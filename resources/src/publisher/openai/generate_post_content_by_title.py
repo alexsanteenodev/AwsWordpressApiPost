@@ -3,7 +3,7 @@ import openai
 import string
 
 
-def generate_post_content_by_title(title: string):
+def main(title: string):
 
     openai.api_key = os.getenv("OPENAI_API_KEY")
     content = openai.Completion.create(
