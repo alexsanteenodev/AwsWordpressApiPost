@@ -1,7 +1,8 @@
 
-# Welcome to your CDK Python project!
+# OpenAI travel articles generator and wordpress publisher
+## Base on AWS CDK Lambda and EventBridge scheduler
 
-This is a blank project for CDK development with Python.
+This is a project for CDK development with Python.
 
 The `cdk.json` file tells the CDK Toolkit how to execute your app.
 

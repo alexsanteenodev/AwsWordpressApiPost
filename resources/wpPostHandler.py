@@ -8,7 +8,7 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
 
-def lambda_handler(event, context):
+def lambda_handler(event, _context):
     """
     Logs the call with a friendly message and the full event data.
     :param event: The event dict that contains the parameters sent when the function
