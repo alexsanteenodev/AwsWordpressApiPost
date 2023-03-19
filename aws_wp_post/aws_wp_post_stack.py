@@ -47,6 +47,7 @@ class AwsWpPostStack(Stack):
                                             "AUTH_USERNAME": os.environ['AUTH_USERNAME'],
                                             "AUTH_PASSWORD": os.environ['AUTH_PASSWORD'],
                                             "OPENAI_API_KEY": os.environ['OPENAI_API_KEY'],
+                                            "STABILITY_API_KEY": os.environ['STABILITY_API_KEY'],
                                             "PUBLISHER_ENABLED": 'True',
                                         }
                                         )

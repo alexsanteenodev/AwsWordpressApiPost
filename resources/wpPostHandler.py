@@ -33,6 +33,3 @@ def lambda_handler(event, _context):
         print("Publisher is disabled")
 
     print("Handler finished")
-
-
-# lambda_handler({"time": "2021-08-01T00:00:00Z"}, None)

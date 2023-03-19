@@ -19,4 +19,4 @@ def generate_post_title():
     placeholder = string.Template(random.choice(data['placeholders']))
     location = random.choice(data['locations'])
     title = placeholder.substitute(location=location)
-    return title
+    return title, location

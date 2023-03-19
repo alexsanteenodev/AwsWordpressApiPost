@@ -60,3 +60,6 @@ Enjoy!
 
 # deploy with args
 ./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2/posts" "username" "password" --profile=YOUR_PROFILE
+
+# Python alias
+echo "alias python=/usr/bin/python3" >> ~/.zshrc
