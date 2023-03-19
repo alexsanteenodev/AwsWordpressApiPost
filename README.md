@@ -1,5 +1,12 @@
 
 # OpenAI travel articles generator and wordpress publisher
+
+## Features
+1. Generate random title for article from Locations and Adjectives
+2. Generate travel articles with OpenAI API based on a given keyword
+3. Generate featured image for article with Stable Diffusion AI (Stability.ai API) based on article title
+4. Publish article to Wordpress
+
 ## Base on AWS CDK Lambda and EventBridge scheduler
 
 This is a project for CDK development with Python.
@@ -59,7 +66,8 @@ command.
 Enjoy!
 
 # deploy with args
-./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2/posts" "username" "password" --profile=YOUR_PROFILE
-
+```
+./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2" "username" "password" --profile=YOUR_PROFILE
+```
 # Python alias
 echo "alias python=/usr/bin/python3" >> ~/.zshrc
