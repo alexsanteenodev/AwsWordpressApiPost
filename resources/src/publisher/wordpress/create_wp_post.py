@@ -15,8 +15,6 @@ def create_wp_post(title: string, location: string):
     # Set the basic auth credentials
     auth = (os.environ['AUTH_USERNAME'], os.environ['AUTH_PASSWORD'])
 
-    print("auth: ", auth)
-
     slug = slugify(title)
     print("slug: ", slug)
     post_exist_response = get_wp_post_by_slug(slug)

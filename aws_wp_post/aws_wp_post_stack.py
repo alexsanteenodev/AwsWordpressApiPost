@@ -40,7 +40,7 @@ class AwsWpPostStack(Stack):
                                         handler="lambda_handler",
                                         role=lambda_role,
                                         # sets the timeout to 30 seconds
-                                        timeout=Duration.seconds(30),
+                                        timeout=Duration.seconds(50),
                                         log_retention=aws_logs.RetentionDays.THREE_DAYS,
                                         environment={
                                             "ENDPOINT_URL": os.environ['ENDPOINT_URL'],
@@ -54,7 +54,7 @@ class AwsWpPostStack(Stack):
         # event rule for invoking lambda function by schedule
         event_rule = aws_events.Rule(self, "scheduleRule",
                                      schedule=aws_events.Schedule.cron(
-                                         minute='0', hour='22'),
+                                         minute='0', hour='22',day='*/2'),
                                      )
 
         # add target to event rule
