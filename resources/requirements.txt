@@ -4,5 +4,5 @@ google-api-python-client
 google-auth-oauthlib
 slugify
 python-slugify
-openai
+openai==0.27.0
 stability-sdk
