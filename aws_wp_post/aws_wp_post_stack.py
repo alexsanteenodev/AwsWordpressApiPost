@@ -40,7 +40,7 @@ class AwsWpPostStack(Stack):
                                         handler="lambda_handler",
                                         role=lambda_role,
                                         # sets the timeout to 30 seconds
-                                        timeout=Duration.seconds(50),
+                                        timeout=Duration.seconds(120),
                                         log_retention=aws_logs.RetentionDays.THREE_DAYS,
                                         environment={
                                             "ENDPOINT_URL": os.environ['ENDPOINT_URL'],
