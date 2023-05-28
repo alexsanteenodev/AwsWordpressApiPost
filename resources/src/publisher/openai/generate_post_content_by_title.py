@@ -16,5 +16,4 @@ def generate_post_content_by_title(title: string):
     )
 
 
-    print(content)
     return content.choices[0].message.content
