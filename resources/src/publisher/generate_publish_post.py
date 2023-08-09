@@ -17,5 +17,4 @@ def generate_publish_post():
         print("Post created successfully. Status code:", response.status_code)
     else:
         print("Failed to create post! Status code: ", response.content)
-        raise Exception(
-            "Post create failed!!!")
+        raise Exception("Post create failed!!!")

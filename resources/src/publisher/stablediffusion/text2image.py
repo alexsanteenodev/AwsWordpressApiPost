@@ -15,12 +15,12 @@ def text2image(title: string):
         raise Exception("Missing Stability API key.")
 
     payload = {
-        "cfg_scale": 7,
+        "cfg_scale": 8,
         "clip_guidance_preset": "FAST_BLUE",
-        "height": 512,
-        "width": 512,
+        "height": 768,
+        "width": 768,
         "samples": 1,
-        "steps": 40,
+        "steps": 56,
         "text_prompts": [
             {
                 "text": title,
