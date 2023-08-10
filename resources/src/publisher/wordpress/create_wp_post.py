@@ -7,7 +7,7 @@ import string
 from src.publisher.wordpress.get_wp_post_by_slug import get_wp_post_by_slug
 from src.publisher.openai.generate_post_content_by_title import generate_post_content_by_title
 from src.publisher.stablediffusion.text2image import text2image
-
+from src.publisher.openai.generate_meta_description_by_title import generate_meta_description_by_title
 
 def create_wp_post(title: string, location: string):
     # Set the endpoint URL for the WordPress site
@@ -29,6 +29,8 @@ def create_wp_post(title: string, location: string):
     print("Generating post content...")
 
     content = generate_post_content_by_title(title)
+    meta_desciption= generate_meta_description_by_title(title)
+
     if (not content):
         return 500
     else:
@@ -36,9 +38,7 @@ def create_wp_post(title: string, location: string):
 
     print("Generating image...")
 
-    image_promt = "Generate featured photo for post with title " + \
-        title+" , high quality, real"
-    image_data = text2image(image_promt)
+    image_data = text2image(location)
 
     # Send a GET request to retrieve the image data from another HTTP request
 
@@ -67,7 +67,10 @@ def create_wp_post(title: string, location: string):
         "status": "publish",
         'featured_media': media_id,
         # Replace 1 with the ID of the category you want to assign to the post
-        "categories": [4]
+        "categories": [4],
+        "meta": {
+            "description": meta_desciption
+        }
     }
 
     print("Creating in WP...")

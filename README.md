@@ -1,6 +1,7 @@
 
-# OpenAI travel articles generator and wordpress publisher
-This repository is Python project which generates unique article with image using OpenAI and Stable Diffusion and publish it to wordpress website. Also it contains AWS CDK infrastructure to run publish code within AWS Lambda by schedule
+# OpenAI travel articles generator and wordpress publisher (Promgrammatic SEO)
+This repository is Python project which generates unique article with image using OpenAI and Stable Diffusion and publish it to wordpress website. Also it contains AWS CDK infrastructure to run publish code within AWS Lambda by schedule.
+It serves purpose of programmatic SEO, where you don't have to hire copywriters to fill your website with articles.
 
 
 ## Features
@@ -25,7 +26,7 @@ you can create the virtualenv manually.
 To manually create a virtualenv on MacOS and Linux:
 
 ```
-$ python3 -m venv .venv
+$ python -m venv .venv
 ```
 
 After the init process completes and the virtualenv is created, you can use the following
@@ -68,6 +69,7 @@ command.
 Enjoy!
 
 # deploy app to AWS account with args
+# You should have Docker up and runnning!!!
 ```
 ./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2" "username" "password" "OpenAiApiKey" "Stable AI ApiKey" --profile=YOUR_PROFILE
 ```
