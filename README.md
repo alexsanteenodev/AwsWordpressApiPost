@@ -1,5 +1,7 @@
 
 # OpenAI travel articles generator and wordpress publisher
+This repository is Python project which generates unique article with image using OpenAI and Stable Diffusion and publish it to wordpress website. Also it contains AWS CDK infrastructure to run publish code within AWS Lambda by schedule
+
 
 ## Features
 1. Generate random title for article from Locations and Adjectives
@@ -65,9 +67,10 @@ command.
 
 Enjoy!
 
-# deploy with args
+# deploy app to AWS account with args
 ```
-./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2" "username" "password" --profile=YOUR_PROFILE
+./cdk-deploy.sh "https://YOUR_SITE.COM/wp-json/wp/v2" "username" "password" "OpenAiApiKey" "Stable AI ApiKey" --profile=YOUR_PROFILE
 ```
+
 # Python alias
 echo "alias python=/usr/bin/python3" >> ~/.zshrc

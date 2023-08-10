@@ -2,7 +2,7 @@ import json
 import random
 import string
 from os import path
-from src.publisher.openao.generate_uniq_title import generate_uniq_title
+from src.publisher.openai.generate_uniq_title import generate_uniq_title
 
 basepath = path.dirname(__file__)
 
