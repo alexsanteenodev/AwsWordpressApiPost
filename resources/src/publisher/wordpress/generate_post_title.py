@@ -22,5 +22,5 @@ def generate_post_title():
     h1 = placeholder.substitute(location=location)
 
     title = generate_uniq_title(h1)
-    print(title, location, h1)
+    
     return [title, location, h1]

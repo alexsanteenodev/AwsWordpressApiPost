@@ -70,7 +70,7 @@ def create_wp_post(title: string, location: string, h1: string):
         "categories": [4],
         "meta": {
             "description": meta_desciption,
-            '_yoast_wpseo_metadesc': meta_description+
+            "_yoast_wpseo_metadesc": meta_desciption
         },
         "yoast_meta": {
             "yoast_wpseo_title": title,

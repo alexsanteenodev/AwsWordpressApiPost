@@ -3,14 +3,18 @@ from src.publisher.wordpress.generate_post_title import generate_post_title
 
 
 def generate_publish_post():
-    title, location = generate_post_title()
+    title, location, h1 = generate_post_title()
+
+    print(f"Title: {title}")
+    print(f"Location: {location}")
+    print(f"H1: {h1}")
     # Generate a post content using OpenAI
     if (not title):
         return
 
     print("Generating post content for: " + title)
     # Call the function to create the post
-    response = create_wp_post(title, location)
+    response = create_wp_post(title, location, h1)
 
     # Print the response status code
     if (response and response.status_code == 201):
