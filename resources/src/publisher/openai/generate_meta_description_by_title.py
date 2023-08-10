@@ -14,7 +14,7 @@ def generate_meta_description_by_title(title: string):
                 {"role": "user", "content": "I am generating meta description for Travel blog article. Generate meta description by following title, which will be best for SEO purposes. Title: " + title + ". Respond only with meta description without any comments"}
             ]
     )
-    print("Unique title generated: ")
+    print("Unique meta generated: "+)
     print(content)
 
     return content.choices[0].message.content

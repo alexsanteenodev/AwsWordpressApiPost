@@ -19,7 +19,8 @@ def generate_post_title():
 
     placeholder = string.Template(random.choice(data['placeholders']))
     location = random.choice(data['locations'])
-    title = placeholder.substitute(location=location)
+    h1 = placeholder.substitute(location=location)
 
-    title = generate_uniq_title(title)
-    return title, location
+    title = generate_uniq_title(h1)
+    print(title, location, h1)
+    return [title, location, h1]

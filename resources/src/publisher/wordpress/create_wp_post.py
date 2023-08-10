@@ -9,7 +9,7 @@ from src.publisher.openai.generate_post_content_by_title import generate_post_co
 from src.publisher.stablediffusion.text2image import text2image
 from src.publisher.openai.generate_meta_description_by_title import generate_meta_description_by_title
 
-def create_wp_post(title: string, location: string):
+def create_wp_post(title: string, location: string, h1: string):
     # Set the endpoint URL for the WordPress site
     endpoint_url = os.environ['ENDPOINT_URL']
     # Set the basic auth credentials
@@ -61,7 +61,7 @@ def create_wp_post(title: string, location: string):
 
     # Set the data for the new post
     data = {
-        "title": title,
+        "title": h1,
         "content": content,
         'slug': slug,
         "status": "publish",
@@ -69,7 +69,12 @@ def create_wp_post(title: string, location: string):
         # Replace 1 with the ID of the category you want to assign to the post
         "categories": [4],
         "meta": {
-            "description": meta_desciption
+            "description": meta_desciption,
+            '_yoast_wpseo_metadesc': meta_description+
+        },
+        "yoast_meta": {
+            "yoast_wpseo_title": title,
+            "yoast_wpseo_metadesc": meta_desciption,
         }
     }
 
